@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+</head>
+
+
+<body>
+  <fb: login-button scope="public_profile,email" onlogin="checkLoginState();">
+  </fb: login-button>
+  <p>ABOUT TO BEGIN!!</p>
+  <script>
+  window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '708978925913200',
+        xfbml      : true,
+        version    : 'v2.4'
+      });
+      FB.api('/me', function(response) {
+          console.log(JSON.stringify(response));
+      });      // FB.getLoginStatus(function(response) {
+      //   statusChangeCallback(response);
+      // });
+    };
+
+    (function(d, s, id){
+      console.log(d);
+      console.log(s);
+      console.log(id);    
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+
+    function statusChangeCallback(response) {
+      console.log('statusChangeCallback');
+      console.log(response);
+      // The response object is returned with a status field that lets the
+      // app know the current login status of the person.
+      // Full docs on the response object can be found in the documentation
+      // for FB.getLoginStatus().
+      if (response.status === 'connected') {
+        // Logged into your app and Facebook.
+        testAPI();
+      } else if (response.status === 'not_authorized') {
+        // The person is logged into Facebook, but not your app.
+        document.getElementById('status').innerHTML = 'Please log ' +
+          'into this app.';
+      } else {
+        // The person is not logged into Facebook, so we're not sure if
+        // they are logged into this app or not.
+        document.getElementById('status').innerHTML = 'Please log ' +
+          'into Facebook.';
+      }
+    }
+  </script>
+  <script type="text/javascript" src="scraper.js"></script>
+</body>
+</html>

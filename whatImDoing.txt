@@ -1,0 +1,24 @@
+ok here we go...!!
+
+people love free food, so I'm creating a service that scrapes gt pages to find where and when free food is being offered at tech! And send notifications to the users, I'm thinking preferably by text. 
+
+currently working on seeing how I can use the facebook api to parse pages and get statuses. If I can do that, I just have to find the right pages...
+
+next step would be to look into websites (such as the coc clubs) and any other clubs or organiztions that I can get the webpage info in order to get their data/feed, etc
+
+ToDo
+-get facebook scraper working 
+-find fb pages and sites to scrape to get food info!
+-parse statuses and maybe do some nlp to figure out what they are offering/when/etc...
+-figure out a good way I can get the word out (app notification? text? email?)
+-figure out a way to host the code on a server so that the code is always running (every 10 minutes or so maybe?) 
+
+
+
+*sometimes, there is just a picture that takes you to an event, which has more details. Ex: palantir event doesnt show up bc its a picture. For this case, navigate to event and parse its description. 
+
+LEGGO!!!!
+
+
+
+(rank each website/page on the amount of posts it makes. Fetch those pages' feeds more often)

@@ -76,31 +76,43 @@ def createStatus(status):
 
 def scrapeAllFbPages():
 
+
+    num_processed = 0   # keep a count on how many we've processed
+
     for page in allPages:
-        num_processed = 0   # keep a count on how many we've processed
         scrape_starttime = datetime.datetime.now()
-        
-        print "Scraping %s Facebook Page: %s\n" % (page.page_id, scrape_starttime)
+        print page
         
         statuses = getFacebookPageFeedData(page.page_id, access_token, statusLimit)
-        
+        # print statuses
+        print len(statuses)
+
+        # data = status['data']
+
+        print page
+        newStatuses = []
         for status in statuses['data']:
-            newStatus = createStatus(status)
-            page.addStatus(newStatus)
-            num_processed += 1          
+            # print status
+            newStatuses.append(createStatus(status))
+            # print newStatus
+
+        page.addStatuses(newStatuses)
+        num_processed += 1     
 
     print "\nDone!\n%s Statuses Processed in %s" % (num_processed, datetime.datetime.now() - scrape_starttime)
+
 
 def getAllStatuses():
     allStatuses = []
     for page in allPages:
         for status in page.statusList:
+            print status
             allStatuses.append(status)
-    print len(allStatuses)
+        # exit() 
+    print "length of statuses", len(allStatuses)
+    # print allStatuses
     return allStatuses            
 
-def parseStatuses():
-    Parser.parseAllStatuses(allPages)
 
 def initPages():
     allPages.append(Page("Employer Relations at GT", "PAGE", "1", "1032976583394053"))
@@ -116,8 +128,21 @@ def initPages():
 if __name__ == '__main__':
   initPages()
   scrapeAllFbPages()
-  for status in getAllStatuses():
-    status.basicToString()
+
+  allStatuses = getAllStatuses()
+
+  # NewStatusList = []
+  # for status in getAllStatuses():
+  #   NewStatusList.append(status.toStringBasic())
+
+  # # string = '\n'.join(NewStatusList)
+
+  # # import sys
+  # # sys.stdout = open('statuses.txt', 'w')
+  # # print string
+
+  # print NewStatusList
+
   # parseStatuses()  
 
 # The CSV can be opened in all major statistical programs. Have fun! :)

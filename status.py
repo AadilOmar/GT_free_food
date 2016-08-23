@@ -19,9 +19,14 @@ class Status:
     self.num_shares = num_shares
 
   def toString(self):
-    print (self, self.status_id, self.message, self.status_type, self.link, self.date_created, self.num_likes, self.num_comments, self.num_shares)  
+    return (self, self.status_id, self.message, self.status_type, self.link, self.date_created, self.num_likes, self.num_comments, self.num_shares)  
 
-  def basicTostring(self):
+  def toStringBasic(self):
+    return (self.message + self.date_created)
+
+  def printStatus(self):
+    import sys
+    sys.stdout = open('statuses.txt', 'w')
     print (self.message, self.date_created)
 
 if __name__ == '__main__':

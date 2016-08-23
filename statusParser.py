@@ -1,13 +1,17 @@
 from status import Status
+keywords = [""]
 
-def parseAllStatuses(allPages):
-  print "................"
-  print ""
-  for i in allPages:
-    print i.name
+def parseAllStatuses(allStatuses):
+  statusesWithFood = []
+  for status in allStatuses:
+    if statusDealsWithFood(status):
+      statusesWithFood.append(status)
+  return statusesWithFood  
 
-def findStatusesWithFood(allStatuses):
-  return
+def statusDealsWithFood(status):
+  if("food" in status.message):
+    return true
+  return false
 
 def filterByKeyword(allStatuses, keyword):
   return

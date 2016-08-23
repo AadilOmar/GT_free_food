@@ -14,11 +14,28 @@ ToDo
 -figure out a way to host the code on a server so that the code is always running (every 10 minutes or so maybe?) 
 
 
-
 *sometimes, there is just a picture that takes you to an event, which has more details. Ex: palantir event doesnt show up bc its a picture. For this case, navigate to event and parse its description. 
-
-LEGGO!!!!
-
 
 
 (rank each website/page on the amount of posts it makes. Fetch those pages' feeds more often)
+
+update (12/24/15):
+  scraping facebook pages             (DONE)
+  getting statuses from pages         (DONE)
+  get texts to work(--using gmail--)  (DONE)  
+  get relevant statuses               (IN PROGRESS)
+  basic recieving texts working       (DONE)
+
+  TODO:
+    
+
+
+
+
+
+how about instead of using texting, I create an application. A webapp. every person has a username and password 
+
+
+
+server1.) server that constantly checks pages for food. If Finds relevant posts, collects them. Pushes posts to server2
+server2.) server that gets hit if free food is found on campus- sends texts to students 

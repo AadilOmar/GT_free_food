@@ -39,3 +39,26 @@ how about instead of using texting, I create an application. A webapp. every per
 
 server1.) server that constantly checks pages for food. If Finds relevant posts, collects them. Pushes posts to server2
 server2.) server that gets hit if free food is found on campus- sends texts to students 
+
+
+
+USERS:
+	create users, show users, edit notification settings for user*
+
+FOODPOST:
+	
+	date of creation
+	post creator
+	date
+	time
+	location
+	food type
+	reliability
+	food finished
+
+	create a post
+	updata a post
+	show all posts
+	show posts for a specific user based on his notification settings
+	rate post
+
